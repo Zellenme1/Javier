@@ -1,0 +1,51 @@
+// ==========================================================
+// CONTACTO (formulario visual)
+// ==========================================================
+@use 'abstracts' as a;
+
+.contact {
+  &__inner {
+    display: grid;
+    gap: a.space(5);
+
+    @include a.respond('desktop') {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: start;
+    }
+  }
+
+  &__text p { color: a.tone('muted'); max-width: 30rem; }
+}
+
+.form {
+  @include a.card(4);
+  display: grid;
+  gap: a.space(3);
+
+  &__field {
+    display: grid;
+    gap: a.space(1);
+
+    label { font: 700 #{a.rem(16)}/1.2 a.$font-heading; }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: a.space(1.5) a.space(2);
+    border: 2px solid a.tone('line');
+    border-radius: a.$radius;
+    background: a.tone('surface');
+    font: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: a.tone('primary');
+      box-shadow: 0 0 0 3px rgba(a.tone('accent'), 0.6);
+    }
+  }
+
+  textarea { min-height: a.space(15); resize: vertical; }
+
+  .btn { justify-self: start; }
+}

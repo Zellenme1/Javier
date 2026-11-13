@@ -1,0 +1,100 @@
+// ==========================================================
+// BASE: reset, tipografía, contenedor, botones y utilidades
+// ==========================================================
+@use 'sass:math';
+@use 'abstracts' as a;
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  font-family: a.$font-body;
+  font-size: a.rem(18);
+  line-height: 1.6;
+  color: a.tone('ink');
+  background: a.tone('surface');
+}
+
+img, svg { display: block; max-width: 100%; }
+
+h1, h2, h3 {
+  font-family: a.$font-heading;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 a.space(2);
+}
+
+h1 {
+  font-size: a.rem(38);
+  @include a.respond('desktop') { font-size: a.rem(60); }
+}
+
+h2 {
+  font-size: a.rem(30);
+  @include a.respond('desktop') { font-size: a.rem(40); }
+}
+
+h3 { font-size: a.rem(22); }
+
+p { margin: 0 0 a.space(2); }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid a.tone('accent');
+  outline-offset: 3px;
+}
+
+.container {
+  width: calc(100% - #{a.space(4)});
+  max-width: a.$container;
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: a.space(8);
+  scroll-margin-top: a.$header-height;
+
+  @include a.respond('desktop') { padding-block: a.space(12); }
+
+  &__intro {
+    max-width: math.div(a.$container, 2);   // la mitad del contenedor
+    margin-bottom: a.space(5);
+    color: a.tone('muted');
+  }
+}
+
+// Botones: la forma va aquí, el color en cada variante
+.btn {
+  display: inline-block;
+  padding: a.space(1.5) a.space(3);
+  border: 2px solid transparent;
+  border-radius: a.$radius-pill;
+  font: 700 #{a.rem(17)}/1 a.$font-heading;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  @include a.button-theme(a.tone('primary'));
+
+  &--accent  { @include a.button-theme(a.tone('accent')); }
+
+  &--outline {
+    background: transparent;
+    color: inherit;
+    border-color: currentColor;
+
+    &:hover { background: rgba(a.tone('white'), 0.12); }
+  }
+}
+
+// Utilidades de margen superior: .mt-1 ... .mt-5
+@for $i from 1 through 5 {
+  .mt-#{$i} { margin-top: a.space($i); }
+}

@@ -1,0 +1,40 @@
+// ==========================================================
+// VARIABLES GLOBALES: colores, tipografías, espaciados, etc.
+// ==========================================================
+
+// Mapa de colores de la marca
+$colors: (
+  'primary':      #1f4d36,
+  'primary-dark': #123222,
+  'accent':       #f2c94c,
+  'ink':          #17231c,
+  'muted':        #56655c,
+  'surface':      #f6f7f1,
+  'white':        #ffffff,
+  'line':         #dde3d6
+);
+
+// Color de acento de cada tarjeta de servicio (se recorre con @each)
+$service-accents: (
+  'web':     #f2c94c,
+  'tienda':  #9fd1ae,
+  'soporte': #b4c9ec
+);
+
+// Tipografías
+$font-heading: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif;
+$font-body:    'Source Sans 3', 'Segoe UI', sans-serif;
+
+// Espaciados y medidas
+$base-font-size: 16px;
+$space-unit:     8px;
+$header-height:  $space-unit * 9;   // 72px
+$container:      1120px;
+$radius:         14px;
+$radius-pill:    999px;
+
+// Puntos de ruptura (mobile first)
+$breakpoints: (
+  'tablet':  768px,
+  'desktop': 1024px
+);

@@ -1,0 +1,10 @@
+// ==========================================================
+// ARCHIVO PRINCIPAL: solo carga los módulos con @use
+// Compilar con:  npm run build
+// ==========================================================
+@use 'base';
+@use 'header';
+@use 'hero';
+@use 'services';
+@use 'contact';
+@use 'footer';

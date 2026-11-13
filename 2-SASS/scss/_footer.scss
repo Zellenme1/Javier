@@ -1,0 +1,43 @@
+// ==========================================================
+// PIE DE PÁGINA
+// ==========================================================
+@use 'abstracts' as a;
+
+$footer-bg: a.tone('ink');
+
+.footer {
+  padding-block: a.space(6);
+  background: $footer-bg;
+  color: a.text-on($footer-bg);
+  font-size: a.rem(16);
+
+  &__grid {
+    display: grid;
+    gap: a.space(4);
+
+    @include a.respond('desktop') { grid-template-columns: 2fr 1fr 1fr; }
+  }
+
+  h3 { font-size: a.rem(18); }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li + li { margin-top: a.space(1); }
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  &__legal {
+    margin: a.space(4) 0 0;
+    padding-top: a.space(2);
+    border-top: 1px solid rgba(a.tone('white'), 0.2);
+    color: rgba(a.tone('white'), 0.7);
+  }
+}

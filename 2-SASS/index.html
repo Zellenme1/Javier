@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Huerta Digital · Diseño web en Murcia</title>
+  <meta name="description" content="Estudio de diseño web, tiendas online y mantenimiento para negocios de Murcia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- 1. CABECERA -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#inicio">Huerta<span class="logo__mark">Digital</span></a>
+
+      <input type="checkbox" id="nav-toggle" class="header__toggle" aria-label="Abrir o cerrar el menú">
+      <label for="nav-toggle" class="header__burger">Menú</label>
+
+      <nav class="nav" aria-label="Principal">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#ventajas">Ventajas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. SECCIÓN PRINCIPAL -->
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <div>
+          <h1>Webs que tu equipo sabe mantener</h1>
+          <p class="hero__lead">Diseñamos y programamos páginas rápidas para negocios de Murcia. Tú pones el contenido; nosotros nos encargamos de que todo funcione.</p>
+          <div class="hero__actions">
+            <a class="btn btn--accent" href="#contacto">Pedir presupuesto</a>
+            <a class="btn btn--outline" href="#servicios">Ver servicios</a>
+          </div>
+        </div>
+        <img class="hero__image" src="assets/images/hero.svg" alt="Ilustración de una página web y un limón" width="520" height="420">
+      </div>
+    </section>
+
+    <!-- 3. SERVICIOS -->
+    <section class="section services" id="servicios">
+      <div class="container">
+        <h2>Lo que hacemos</h2>
+        <p class="section__intro">Tres servicios que cubren desde la primera página hasta el soporte del día a día.</p>
+
+        <div class="services__grid">
+          <article class="card card--web">
+            <h3>Diseño web</h3>
+            <p>Páginas a medida, adaptadas a móvil y ordenadores, con textos claros y carga rápida.</p>
+            <a class="btn" href="#contacto">Pedir una web</a>
+          </article>
+          <article class="card card--tienda">
+            <h3>Tienda online</h3>
+            <p>Catálogo, carrito y pagos seguros para que puedas vender productos desde el primer día.</p>
+            <a class="btn" href="#contacto">Abrir mi tienda</a>
+          </article>
+          <article class="card card--soporte">
+            <h3>Mantenimiento</h3>
+            <p>Copias de seguridad, actualizaciones y cambios de contenido sin que tengas que preocuparte.</p>
+            <a class="btn" href="#contacto">Contratar soporte</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. VENTAJAS -->
+    <section class="section benefits" id="ventajas">
+      <div class="container">
+        <h2>Por qué trabajar con nosotros</h2>
+
+        <div class="benefits__grid mt-4">
+          <div class="benefit">
+            <h3>Respuesta en 24 h</h3>
+            <p>Resolvemos tus dudas el mismo día laborable o al siguiente.</p>
+          </div>
+          <div class="benefit">
+            <h3>Precio cerrado</h3>
+            <p>Te damos el presupuesto completo antes de empezar. Sin sorpresas.</p>
+          </div>
+          <div class="benefit">
+            <h3>Código ordenado</h3>
+            <p>Tu web se puede ampliar y mantener, también por otra persona.</p>
+          </div>
+          <div class="benefit">
+            <h3>Trato cercano</h3>
+            <p>Estamos en Murcia y nos reunimos contigo en persona si lo prefieres.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CONTACTO -->
+    <section class="section contact" id="contacto">
+      <div class="container contact__inner">
+        <div class="contact__text">
+          <h2>Cuéntanos tu proyecto</h2>
+          <p>Escribe qué necesitas y te enviamos una propuesta con plazos y precio.</p>
+        </div>
+
+        <form class="form" action="#" onsubmit="return false">
+          <div class="form__field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name">
+          </div>
+          <div class="form__field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="nombre@empresa.es" autocomplete="email">
+          </div>
+          <div class="form__field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="¿Qué necesitas?"></textarea>
+          </div>
+          <button class="btn" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. PIE DE PÁGINA -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <h3>Huerta Digital</h3>
+          <p>Estudio de diseño web en Murcia. Calle de la Acequia, 12 · 30001 Murcia</p>
+        </div>
+        <div>
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#ventajas">Ventajas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contacto</h3>
+          <ul>
+            <li><a href="mailto:hola@huertadigital.example">hola@huertadigital.example</a></li>
+            <li>968 000 000</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__legal">© 2026 Huerta Digital. Proyecto de clase, empresa ficticia.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+// ==========================================================
+// FUNCIONES PROPIAS
+// ==========================================================
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:color';
+@use 'variables' as v;
+
+// Devuelve un color del mapa de la marca (avisa si no existe)
+@function tone($name) {
+  @if map.has-key(v.$colors, $name) {
+    @return map.get(v.$colors, $name);
+  } @else {
+    @error "El color '#{$name}' no existe en $colors.";
+  }
+}
+
+// Convierte píxeles (número sin unidad) a rem a partir del tamaño base
+@function rem($px) {
+  @return math.div($px, math.div(v.$base-font-size, 1px)) * 1rem;
+}
+
+// Espaciado como múltiplo de la unidad base (8px)
+@function space($times) {
+  @return $times * v.$space-unit;
+}
+
+// Elige texto oscuro o claro según la luminosidad del fondo
+@function text-on($background) {
+  @if color.channel($background, 'lightness', $space: hsl) > 55% {
+    @return tone('ink');
+  } @else {
+    @return tone('white');
+  }
+}

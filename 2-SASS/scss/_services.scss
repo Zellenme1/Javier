@@ -1,0 +1,62 @@
+// ==========================================================
+// SERVICIOS (tarjetas) Y VENTAJAS
+// ==========================================================
+@use 'sass:math';
+@use 'sass:color';
+@use 'abstracts' as a;
+
+.services__grid {
+  display: grid;
+  gap: a.space(3);
+
+  @include a.respond('desktop') { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  @include a.card(4);
+  display: flex;
+  flex-direction: column;
+  border-top: 8px solid a.tone('line');
+
+  p {
+    flex: 1;
+    color: a.tone('muted');
+  }
+
+  .btn { align-self: flex-start; }
+
+  // Una variante por cada servicio del mapa $service-accents
+  @each $name, $accent in a.$service-accents {
+    &--#{$name} { border-top-color: $accent; }
+  }
+}
+
+// ---------- Ventajas ----------
+.benefits {
+  background: a.tone('white');
+
+  &__grid {
+    display: grid;
+    gap: a.space(4);
+
+    @include a.respond('tablet')  { grid-template-columns: repeat(2, 1fr); }
+    @include a.respond('desktop') { grid-template-columns: repeat(4, 1fr); }
+  }
+}
+
+.benefit {
+  padding-left: a.space(2);
+  border-left: 4px solid a.tone('primary');
+
+  p { color: a.tone('muted'); margin: 0; }
+
+  // El borde pasa del verde al amarillo de forma progresiva
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      border-left-color: color.mix(
+        a.tone('accent'), a.tone('primary'),
+        $weight: math.div($i, 4) * 100%
+      );
+    }
+  }
+}

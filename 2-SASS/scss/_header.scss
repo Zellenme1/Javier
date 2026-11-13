@@ -1,0 +1,88 @@
+// ==========================================================
+// CABECERA Y NAVEGACIÓN
+// ==========================================================
+@use 'abstracts' as a;
+
+$header-bg: a.tone('primary-dark');
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: a.$header-height;
+  background: $header-bg;
+  color: a.text-on($header-bg);
+
+  &__inner {
+    @include a.flex(space-between, center);
+    height: 100%;
+  }
+
+  // Menú móvil sin JavaScript: casilla + etiqueta
+  &__toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &:focus-visible + .header__burger { outline: 3px solid a.tone('accent'); }
+    &:checked ~ .nav { display: block; }
+  }
+
+  &__burger {
+    padding: a.space(1) a.space(2);
+    border: 1px solid rgba(a.tone('white'), 0.4);
+    border-radius: a.$radius-pill;
+    font-size: a.rem(16);
+    cursor: pointer;
+
+    @include a.respond('desktop') { display: none; }
+  }
+}
+
+.logo {
+  font: 700 #{a.rem(22)}/1 a.$font-heading;
+  text-decoration: none;
+
+  &__mark { color: a.tone('accent'); }
+}
+
+.nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: a.space(2);
+  background: $header-bg;
+
+  @include a.respond('desktop') {
+    display: block;
+    position: static;
+    padding: 0;
+    background: none;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: a.space(1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include a.respond('desktop') {
+      flex-direction: row;
+      gap: a.space(4);
+    }
+  }
+
+  a {
+    display: block;
+    padding: a.space(1) 0;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible { border-bottom-color: a.tone('accent'); }
+  }
+}

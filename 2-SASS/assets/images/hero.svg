@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" role="img" aria-labelledby="t">
+  <title id="t">Ventana de navegador con una web y un limón</title>
+  <rect x="20" y="30" width="400" height="290" rx="18" fill="#f6f7f1"/>
+  <path d="M20 48a18 18 0 0 1 18-18h364a18 18 0 0 1 18 18v26H20z" fill="#dde3d6"/>
+  <circle cx="46" cy="52" r="6" fill="#1f4d36"/>
+  <circle cx="66" cy="52" r="6" fill="#1f4d36" opacity=".6"/>
+  <circle cx="86" cy="52" r="6" fill="#1f4d36" opacity=".3"/>
+  <rect x="48" y="100" width="200" height="24" rx="7" fill="#1f4d36"/>
+  <rect x="48" y="136" width="270" height="10" rx="5" fill="#56655c" opacity=".45"/>
+  <rect x="48" y="154" width="230" height="10" rx="5" fill="#56655c" opacity=".45"/>
+  <rect x="48" y="184" width="104" height="34" rx="17" fill="#f2c94c"/>
+  <rect x="48" y="244" width="104" height="52" rx="10" fill="#9fd1ae"/>
+  <rect x="164" y="244" width="104" height="52" rx="10" fill="#b4c9ec"/>
+  <rect x="280" y="244" width="104" height="52" rx="10" fill="#dde3d6"/>
+  <path d="M352 238c8-44 62-60 102-42-10 44-58 62-102 42z" fill="#7fb98f"/>
+  <g transform="translate(392 318) rotate(-18)">
+    <ellipse rx="100" ry="74" fill="#f2c94c"/>
+    <path d="M-100 0l-16-6 16-6zM100 0l16-6-16-6z" fill="#e0b52f"/>
+    <ellipse cx="-30" cy="-30" rx="34" ry="14" fill="#fff" opacity=".35"/>
+  </g>
+</svg>

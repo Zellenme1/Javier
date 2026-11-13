@@ -1,0 +1,37 @@
+// ==========================================================
+// SECCIÓN PRINCIPAL
+// ==========================================================
+@use 'abstracts' as a;
+
+$hero-bg: a.tone('primary-dark');
+
+.hero {
+  padding-block: a.space(8);
+  background: $hero-bg;
+  color: a.text-on($hero-bg);
+
+  &__inner {
+    display: grid;
+    gap: a.space(5);
+    align-items: center;
+
+    @include a.respond('desktop') { grid-template-columns: 1.1fr 0.9fr; }
+  }
+
+  &__lead {
+    max-width: 34rem;
+    font-size: a.rem(20);
+    color: rgba(a.tone('white'), 0.85);
+  }
+
+  &__actions {
+    @include a.flex(flex-start, center, a.space(2));
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}

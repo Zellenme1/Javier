@@ -1,0 +1,48 @@
+// ==========================================================
+// MIXINS REUTILIZABLES
+// ==========================================================
+@use 'sass:map';
+@use 'sass:color';
+@use 'variables' as v;
+@use 'functions' as f;
+
+// 1) Media query mobile first a partir de un nombre de breakpoint
+@mixin respond($breakpoint) {
+  @if map.has-key(v.$breakpoints, $breakpoint) {
+    @media (min-width: map.get(v.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @error "El breakpoint '#{$breakpoint}' no existe en $breakpoints.";
+  }
+}
+
+// 2) Flexbox con tres parámetros opcionales
+@mixin flex($justify: center, $align: center, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// 3) Tema de color de un botón (dos parámetros: fondo y texto opcional)
+@mixin button-theme($background, $text: null) {
+  $final-text: f.text-on($background);
+  @if $text {
+    $final-text: $text;
+  }
+  background: $background;
+  color: $final-text;
+
+  &:hover {
+    background: color.adjust($background, $lightness: -8%);
+  }
+}
+
+// 4) Tarjeta con borde, radio y relleno configurable
+@mixin card($padding: 3) {
+  background: f.tone('white');
+  border: 1px solid f.tone('line');
+  border-radius: v.$radius;
+  padding: f.space($padding);
+}
